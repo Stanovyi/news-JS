@@ -1,29 +1,113 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>NewsPortal</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
     </head>
     <body>
-        <header>
-            <h1>News Portal</h1>
-        </header>
-        <main>
-            <div class="sources buttons"></div>
-            <div class="news"></div>
-        </main>
-        <footer>
-            <p class="copyright">
-                Copyright <a href="https://newsapi.org">NewsAPI</a>
-            </p>
-        </footer>
+        <div class="app-layout">
+            <header class="header">
+                <div class="header__content">
+                    <div class="header__brand">
+                        <span class="header__badge">TypeScript</span>
+                        <h1 class="header__title">News Portal</h1>
+                    </div>
+                    <div class="header__search">
+                        <input
+                            type="search"
+                            id="sourceSearch"
+                            class="sources-search__input"
+                            placeholder="Filter news channels..."
+                            aria-label="Filter news channels"
+                            autocomplete="off"
+                        />
+                    </div>
+                </div>
+            </header>
+
+            <main class="main-content">
+                <section class="sources-panel" aria-label="News sources">
+                    <div class="sources-panel__heading">
+                        <h2 class="sources-panel__title">Available Channels</h2>
+                        <span class="sources-panel__hint">Click a source to load stories</span>
+                    </div>
+                    <div class="sources buttons"></div>
+                </section>
+
+                <section class="news-panel" aria-label="News articles">
+                    <div class="news">
+                        <div class="news__placeholder">
+                            <p class="news__placeholder-title">Welcome to News Portal</p>
+                            <p class="news__placeholder-text">
+                                Please pick any news source above to display current articles.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <footer class="footer">
+                <div class="footer__content">
+                    <div class="footer__col footer__col_author">
+                        <span>Created by</span>
+                        <a
+                            href="https://github.com/Stanovyi"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="footer__link"
+                        >
+                            Stanovyi
+                        </a>
+                        <span class="footer__year">© 2026</span>
+                    </div>
+
+                    <div class="footer__col footer__col_rss">
+                        <a
+                            href="https://rs.school/courses/javascript"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="footer__rss-link"
+                            aria-label="RS School JavaScript Course"
+                        >
+                            <img
+                                src="https://rs.school/_next/static/media/rss-logo.c19ce1b4.svg"
+                                alt="RS School logo"
+                                class="footer__rss-logo"
+                                width="78"
+                                height="28"
+                            />
+                        </a>
+                    </div>
+
+                    <div class="footer__col footer__col_source">
+                        <p class="copyright">
+                            Data provided by
+                            <a
+                                href="https://newsapi.org"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="footer__link"
+                            >
+                                NewsAPI
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </footer>
+        </div>
 
         <template id="sourceItemTemp">
-            <div class="source__item">
+            <button type="button" class="source__item">
                 <span class="source__item-name"></span>
-            </div>
+            </button>
         </template>
 
         <template id="newsItemTemp">
